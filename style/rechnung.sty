@@ -94,6 +94,7 @@
     \def\ibantext{IBAN:}
     \def\bictext{SWIFT:}
     \def\bankorttext{Bank:}
+    \def\steuertext{Tax details}
     \def\leistungtext{Description}
     \def\zeitpunkttexta{}
     \def\zeitpunkttextb{Realization}
@@ -133,7 +134,6 @@
     }
     \def\rechnrtext{Rechnungsnummer}
     \def\lzraumtext{Leistungszeitraum}
-    \def\ustnrtext{USt-IdNr.}
     \def\empftext{Leistungsempf\"anger:}
     \def\kontaktperstext{Kontaktperson}
     \def\anschrifttext{Postanschrift}
@@ -147,6 +147,7 @@
     \def\ibantext{IBAN:}
     \def\bictext{BIC:}
     \def\bankorttext{Bank:}
+    \def\steuertext{Steuerinformationen}
     \def\leistungtext{Leistungsbeschreibung}
     \def\zeitpunkttexta{Zeitpunkt}
     \def\zeitpunkttextb{der Leistung}
@@ -168,7 +169,8 @@
     \def\uebertragtext{\"Ubertrag}
     \def\nettosumtext{Nettobetrag}
     \def\usttext{Zzgl. Umsatzsteuer}
-    \def\stnrtext{Steuernummer}
+    \def\ustnrtext{USt-IdNr.:}
+    \def\stnrtext{St.-Nr.:}
     \def\bruttosumtext{Rechnungsbetrag}
     \def\geztext{Bereits gezahlt}
     \def\resttext{Zu zahlender Restbetrag}
@@ -504,8 +506,8 @@
       \datumtext&\rdat     
       \ifthenelse{\equal{\rnr}{}}{}{\\\rechnrtext&\rnr}
       \ifthenelse{\equal{\lzraum}{}}{}{\\\lzraumtext&\lzraum}
-      \ifthenelse{\equal{\ust}{}}{}{\\\ustnrtext&\ust}
-      \ifthenelse{\equal{\stnr}{}}{}{\\\stnrtext&\stnr}
+%     \ifthenelse{\equal{\ust}{}}{}{\\\ustnrtext&\ust}
+%     \ifthenelse{\equal{\stnr}{}}{}{\\\stnrtext&\stnr}
     \end{tabular}}}%
   \end{minipage}
   
@@ -555,6 +557,12 @@
       \ifthenelse{\equal{\ibantext}{}}{}{\ibantext&\ \ibanF \\}%
       \ifthenelse{\equal{\bictext}{}}{}{\bictext&\ \bicF \\}%
       \ifthenelse{\equal{\bankorttext}{}}{}{\bankorttext&\ \bankF}%
+    \end{tabular}%
+    \hfill
+    \begin{tabular}[t]{@{}l@{}l@{}}%
+      \multicolumn{2}{@{}l@{}}{\textbf{\steuertext}} \\[.1em]
+      \ifthenelse{\equal{\usttext}{}}{}{\ustnrtext&\ust \\}%
+      \ifthenelse{\equal{\stnrtext}{}}{}{\stnrtext&\stnr \\}%
     \end{tabular}%
   }
 }% Ende AtEndDocument
