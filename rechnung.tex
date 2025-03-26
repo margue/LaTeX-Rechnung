@@ -31,6 +31,7 @@
 \kundenanschrift	{Lager 3}
 \kundenort			{1234 Laudanum}
 \kundenland			{Aremorica}
+\kundenustnummer			{IX123456789}
 \kundenkontakt		{Technokratus}
 \kundentel			{0123\,456789}
 \kundenemail		{technokratus@laudanum.rom}
@@ -38,7 +39,8 @@
 % Rechnungsdaten
 \rechnungsdatum		{21.04.1978}	% \heute = heutiges Datum
 \rechnungsnummer	{1978-001}
-\ustnummer			{IX918273645}
+\leistungszeitraum     {Februar 2025}
+\ustnummer			{DE918273645}
 \steuernummer		{12/345/6789}
 
 % Rechnungstext
@@ -50,17 +52,22 @@ ich erlaube mir entsprechend meiner erbrachten Leistung folgenden Betrag in Rech
 
 \vspace{10mm}
 
+\begin{tabpositionen}
+\positionen{Verladung}{100}
+\positionen{Lieferung ab Werk}{250}
+\end{tabpositionen}
+
 \begin{tableistung}
 \leistung{Planung Hinkelstein}{02.1978}{14}{20}
 \leistung{Produktion Hinkelstein Prototyp\newline(Maßstab 1:10)}{02.1978}{6}{20}
 \leistung{Serienproduktion\newline(Charge 1 -- 25 Stück)}{03.1978}{125}{20}
 \end{tableistung}
 
+\zwischensumme
+
 \begin{tabartikel}
 \artikel{Hinkelstein}{25}{30}
 \end{tabartikel}
-
-\zwischensumme
 
 \begin{tabreise}
 \reise{Gallisches Dorf--Lutetia}{1}{450}{0.3}
@@ -70,11 +77,6 @@ ich erlaube mir entsprechend meiner erbrachten Leistung folgenden Betrag in Rech
 \begin{tabnacht}
 \nacht{Mannekenpix}{24.01.--25.01.1978}{65}
 \end{tabnacht}
-
-\begin{tabsonstiges}
-\sonstiges{Verladung}{100}
-\sonstiges{Lieferung ab Werk}{250}
-\end{tabsonstiges}
 
 \gesamtbetrag{}
 
